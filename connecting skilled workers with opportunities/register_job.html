@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Post Job | Skill Connect</title>
+
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(
+                rgba(0,0,0,0.6),
+                rgba(0,0,0,0.6)
+            ),
+            url("https://images.unsplash.com/photo-1503387762-592deb58ef4e");
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .form-box {
+            width: 350px;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(12px);
+            border-radius: 15px;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+            transform-style: preserve-3d;
+            transition: transform 0.5s;
+            color: white;
+        }
+
+        .form-box:hover {
+            transform: rotateY(-8deg) rotateX(5deg);
+        }
+
+        h3 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: none;
+            border-radius: 8px;
+            outline: none;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(135deg, #28a745, #7ee8a3);
+            border: none;
+            border-radius: 8px;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transform: translateZ(20px);
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            transform: scale(1.05) translateZ(30px);
+            background: linear-gradient(135deg, #7ee8a3, #28a745);
+        }
+    </style>
+</head>
+
+<body>
+
+<form method="post" class="form-box">
+    <h3>💼 Post Job</h3>
+
+    <input name="title" placeholder="Job Title" required>
+    <input name="skill" placeholder="Skill Required" required>
+    <input name="location" placeholder="Job Location" required>
+    <input name="contact" placeholder="Contact Details" required>
+
+    <button type="submit">Post Job</button>
+</form>
+
+</body>
+</html>

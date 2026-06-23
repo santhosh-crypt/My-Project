@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Skill Connect | Job Portal</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            color: white;
+            text-align: center;
+            overflow-x: hidden;
+            background: linear-gradient(120deg, #0f2027, #203a43, #2c5364);
+            min-height: 100vh;
+            position: relative;
+        }
+
+        /* Animated floating icons */
+        .floating {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            overflow: hidden;
+            z-index: 0;
+        }
+
+        .floating span {
+            position: absolute;
+            display: block;
+            font-size: 28px;
+            opacity: 0.2;
+            animation: float 20s linear infinite;
+        }
+
+        .floating span:nth-child(1) { left: 10%; animation-delay: 0s; }
+        .floating span:nth-child(2) { left: 30%; animation-delay: 4s; }
+        .floating span:nth-child(3) { left: 50%; animation-delay: 8s; }
+        .floating span:nth-child(4) { left: 70%; animation-delay: 12s; }
+        .floating span:nth-child(5) { left: 90%; animation-delay: 16s; }
+
+        @keyframes float {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+            }
+            100% {
+                transform: translateY(-10vh) rotate(360deg);
+            }
+        }
+
+        h1 {
+            margin-top: 40px;
+            position: relative;
+            z-index: 2;
+        }
+
+        h3 {
+            margin-top: 10px;
+            position: relative;
+            z-index: 2;
+            opacity: 0.9;
+        }
+
+        /* Cards Container */
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 40px;
+            padding: 60px;
+            max-width: 1100px;
+            margin: auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* 3D Card */
+        .scene {
+            perspective: 1200px;
+        }
+
+        .card {
+            height: 220px;
+            transform-style: preserve-3d;
+            transition: transform 0.8s;
+        }
+
+        .scene:hover .card {
+            transform: rotateY(180deg);
+        }
+
+        .card-face {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 15px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .front {
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .back {
+            background: white;
+            color: #333;
+            transform: rotateY(180deg);
+        }
+
+        .worker { background: linear-gradient(135deg, #00c6ff, #0072ff); }
+        .job { background: linear-gradient(135deg, #56ab2f, #a8e063); }
+        .view-worker { background: linear-gradient(135deg, #ffb347, #ffcc33); }
+        .view-job { background: linear-gradient(135deg, #c471f5, #fa71cd); }
+
+        .btn {
+            margin-top: 15px;
+            padding: 10px 18px;
+            background: #007bff;
+            border: none;
+            border-radius: 6px;
+            color: white;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background: #0056b3;
+        }
+
+        footer {
+            padding: 15px;
+            background: rgba(0, 0, 0, 0.6);
+            position: relative;
+            z-index: 2;
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- Animated background icons -->
+<div class="floating">
+    <span>💼</span>
+    <span>📄</span>
+    <span>🔍</span>
+    <span>👨‍💻</span>
+    <span>👩‍💼</span>
+</div>
+
+<h1>Skill Connect</h1>
+<h3>Find the Right Job. Hire the Right Talent.</h3>
+
+<div class="container">
+
+    <div class="scene">
+        <div class="card">
+            <div class="card-face front worker">👷 Register Worker</div>
+            <div class="card-face back">
+                Create worker profile
+                <button class="btn" onclick="location.href='/register_worker'">Register</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="scene">
+        <div class="card">
+            <div class="card-face front job">💼 Post Job</div>
+            <div class="card-face back">
+                Post job opportunities
+                <button class="btn" onclick="location.href='/register_job'">Post Job</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="scene">
+        <div class="card">
+            <div class="card-face front view-worker">👥 View Workers</div>
+            <div class="card-face back">
+                Browse skilled workers
+                <button class="btn" onclick="location.href='/workers'">View</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="scene">
+        <div class="card">
+            <div class="card-face front view-job">📋 View Jobs</div>
+            <div class="card-face back">
+                Find job openings
+                <button class="btn" onclick="location.href='/jobs'">View</button>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<footer>
+    © 2025 Skill Connect | Job Search Platform
+</footer>
+
+</body>
+</html>
